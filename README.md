@@ -43,4 +43,4 @@ boolean isRankValid(int index)
 
 ## Graphics
 
-All graphics are drawn onto a JPanel. The color of the background changes depending on the amount of danger the player is in, shifting from blue to red. Character images are instances of JLabel and stared as components under the main JPanel instance which acts a manager class.
+All graphics are drawn onto a JPanel. The color of the background changes depending on the amount of danger the player is in, shifting from blue to red. Character images are instances of JLabel and stored as components under the main JPanel instance which acts as a manager class.
