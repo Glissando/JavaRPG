@@ -2,6 +2,8 @@
 
 Final Project for Java Spring 2019.
 
+![Example GIF](https://github.com/Glissando/JavaRPG/blob/master/src/images/example.gif)
+
 ## Table of Contents
 
 > References to explanations of the sourcecode
