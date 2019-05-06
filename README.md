@@ -27,7 +27,7 @@ The AI was built upon from the BrainAI base class which supplies an interface fo
 
 ## Positions
 
-Positioning of abilities/skills is done using bitmasks.
+Positioning of abilities/skills is handled using bitmasks.
 
 ## Code snippet
 
