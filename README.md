@@ -8,14 +8,14 @@ Final Project for Java Spring 2019.
 
 - [Architecture](#architecture)
 - [AI](#ai)
-- [Actor Positions](#positionhandling)
+- [Actor Positions](#positions)
 - [Graphics](#graphics)
 
 
 ## Architecture
 
 - The following image displays the depedencies and structure of the project.
-- An arrow going up to a node visualizes inheritance and an arrow going to the side means it is a member or field of that class.
+- An arrow going down to a node visualizes inheritance and an arrow going to the side means it is a member or field of that class.
 
 <a href=""><img src="https://github.com/Glissando/JavaRPG/blob/master/src/images/architecture.png" title="Architecture" alt="Architecture"></a>
 
@@ -23,7 +23,7 @@ Final Project for Java Spring 2019.
 
 The AI was built upon from the BrainAI base class which supplies an interface for selecting actions.
 
-## Position Handling
+## Positions
 
 Positioning of abilities/skills is done using bitmasks.
 
