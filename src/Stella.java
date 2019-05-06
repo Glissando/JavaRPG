@@ -7,7 +7,7 @@ public class Stella extends Player
     {
         super();
         attack = 6;
-        defence = 4;
+        defence = 5;
         hp = 15;
         maxHp = 15;
         speed = 4;

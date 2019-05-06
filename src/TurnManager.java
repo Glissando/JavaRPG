@@ -81,6 +81,11 @@ public class TurnManager extends JPanel {
         
         //Update player state
         actor.update();
+
+        /*if(actor.isDead())
+        {
+            nextTurn();
+        }*/
         System.out.println("Current Player: " + currentPlayer);
             System.out.println("Current Turn: " + turnCount);
         if(actor.isEnemy)
@@ -156,6 +161,11 @@ public class TurnManager extends JPanel {
             {
                 playerOrder.remove(i);
                 i--;
+
+                if(i > currentPlayer)
+                {
+
+                }
             }
         }
 
@@ -329,7 +339,8 @@ public class TurnManager extends JPanel {
             page.setColor(new Color(122,122,20));
             page.fillRect(rect.x, rect.y + rect.height + 20, rect.width, 10);
         }
-        
+        Font font = new Font("Verdana", Font.BOLD, 28);
+        page.setFont(font);
         page.drawString("Turn: " + turnCount, 50, 50);
     }
 

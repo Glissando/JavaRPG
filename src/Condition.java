@@ -4,7 +4,7 @@ public class Condition
     float defenceModifier = 0.0f;
     int restore;
     int speed;
-    int turns;
+    private int turns;
     int turnCount;
 
     public Condition(int turns, float damageModifier, float defenceModifier, int restore, int speed)
@@ -38,9 +38,15 @@ public class Condition
     public void update(Player player)
     {
         turnCount++;
-        if(turnCount == turns)
-        {
-            player.removeCondition(this);
-        }
+    }
+
+    public int getTurnCount()
+    {
+        return turnCount;
+    }
+
+    public boolean isFinished()
+    {
+        return turnCount == turns;
     }
 }

@@ -57,6 +57,11 @@ public class Player
         return hp;
     }
 
+    public void addHp(int amount)
+    {
+        SetHp(hp + amount);
+    }
+
     public void AddCondition(Condition condition)
     {
         conditions.add(condition);
@@ -82,6 +87,16 @@ public class Player
             c.update(this);
         }
 
+        this.addHp(restore);
+
+        for(int i=0;i<conditions.size();i++)
+        {
+            Condition c = conditions.get(i);
+            if(c.isFinished())
+            {
+                removeCondition(c);
+            }
+        }
     }
 
     public boolean isDead()
