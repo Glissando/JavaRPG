@@ -40,13 +40,14 @@ public class GradientBackground
       Graphics2D g2d = (Graphics2D)page;
       //g2d.rotate(Math.toRadians(time));
       
-      //for(int i=0;i<10;i++)
-      //{
-         int y = 100+time;
-         float t = (float)(height-y) / height;
-         //Color c = clerp(Color.black, color, t);
-         g2d.setColor(Color.RED);
-         Rectangle rect1 = new Rectangle(100+time, y, 100, 100);
+      for(int i=0;i<5;i++)
+      {
+         int y = i*50+time;
+         int x = i*200+time + i;
+         float t = (float)(Math.max(0,height-y)) / height;
+         Color c = clerp(Color.black, color, t);
+         g2d.setColor(c);
+         Rectangle rect1 = new Rectangle(x, y, 100, 100);
          AffineTransform transform = new AffineTransform();
          AffineTransform old = g2d.getTransform();
          transform.rotate(Math.toRadians(time), rect1.getX() + rect1.width/2, rect1.getY() + rect1.height/2);
@@ -55,7 +56,7 @@ public class GradientBackground
          g2d.fill(rect1);
          
          g2d.setTransform(old);
-      //}
+      }
       //g2d.rotate(-Math.toRadians(time));
       time += 1;
       if(time == 500)

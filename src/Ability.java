@@ -10,6 +10,7 @@ public class Ability
     //Areas you have to be in order to use the ability
     byte positionRanks;
     String description;
+    String name;
     static Color background = new Color(150,150,150);
 
     public void SetRanks(byte targetableRanks, byte affectedRanks)

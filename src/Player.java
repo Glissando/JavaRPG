@@ -15,10 +15,12 @@ public class Player
     int attack;
     int defence;
     int restore;
+    int ap;
     Rectangle rect;
     float damageModifier;
     float defenceModifier;
     boolean isEnemy;
+    boolean stunned = false;
     Color color;
     private int animationCount = 0;
     private Timer timer;
@@ -64,7 +66,6 @@ public class Player
 
     public void AddCondition(Condition condition)
     {
-        conditions.add(condition);
         condition.Add(this);
     }
 
@@ -95,6 +96,7 @@ public class Player
             if(c.isFinished())
             {
                 removeCondition(c);
+                i--;
             }
         }
     }

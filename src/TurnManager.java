@@ -9,6 +9,7 @@ import java.awt.event.MouseAdapter;
 import javax.swing.*;
 
 public class TurnManager extends JPanel {
+    private static final long serialVersionUID = 1L;
     Player[] actors = new Player[8];
     ArrayList<Player> playerOrder;
     private int currentPlayer;
@@ -82,12 +83,22 @@ public class TurnManager extends JPanel {
         //Update player state
         actor.update();
 
-        /*if(actor.isDead())
+        if(actor.stunned)
+        {
+            actor.stunned = false;
+            currentPlayer++;
+            nextTurn();
+            return false;
+        }
+
+        if(actor.isDead())
         {
             nextTurn();
-        }*/
+            return false;
+        }
         System.out.println("Current Player: " + currentPlayer);
-            System.out.println("Current Turn: " + turnCount);
+        System.out.println("Current Turn: " + turnCount);
+        
         if(actor.isEnemy)
         {
             turnLock = true;
@@ -104,7 +115,7 @@ public class TurnManager extends JPanel {
                         turnLock = false;
                         currentPlayer++;
                     }
-                        nextTurn();
+                    nextTurn();
                     
                 }
             };
@@ -161,11 +172,6 @@ public class TurnManager extends JPanel {
             {
                 playerOrder.remove(i);
                 i--;
-
-                if(i > currentPlayer)
-                {
-
-                }
             }
         }
 
@@ -377,6 +383,10 @@ public class TurnManager extends JPanel {
 
     public void paint(Graphics page) 
     {
+        double scaleX = getSize().getWidth() / 1280;
+        double scaleY = getSize().getHeight() / 720;
+        Graphics2D g2d = (Graphics2D)page;
+        g2d.scale(scaleX, scaleY);
         super.paint(page);
         draw(page);
 
@@ -384,5 +394,8 @@ public class TurnManager extends JPanel {
         {
             c.paint(page);
         }
+        g2d.scale(-scaleX, -scaleY);
+        
+        
     }
 }

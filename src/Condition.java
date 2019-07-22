@@ -5,7 +5,7 @@ public class Condition
     int restore;
     int speed;
     private int turns;
-    int turnCount;
+    private int turnCount;
 
     public Condition(int turns, float damageModifier, float defenceModifier, int restore, int speed)
     {

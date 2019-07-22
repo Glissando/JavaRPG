@@ -48,14 +48,13 @@ public class Project
         // create a basic JFrame
         JFrame.setDefaultLookAndFeelDecorated(true);
         JFrame frame = new JFrame("JRPG");
-        frame.setSize(1280, 720);
+        frame.setSize(Project.screenWidth, Project.screenHeight);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         // add panel to main frame
         frame.add(tm);
-
         
-
+        frame.setResizable(false);
         frame.setVisible(true);
     }
 }
